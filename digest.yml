@@ -1,0 +1,42 @@
+name: Daily Video Digest
+
+on:
+  schedule:
+    # Runs at 6am PST (14:00 UTC) every day
+    - cron: "0 14 * * *"
+  workflow_dispatch:  # allows manual trigger from GitHub UI
+
+jobs:
+  run-digest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download SQLite DB from previous run
+        # Persists the seen-video history between runs using GitHub cache
+        uses: actions/cache@v4
+        with:
+          path: digest.db
+          key: digest-db-${{ github.run_id }}
+          restore-keys: |
+            digest-db-
+
+      - name: Run digest
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: python main.py

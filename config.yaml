@@ -1,0 +1,54 @@
+# ─────────────────────────────────────────
+# YouTube Digest - Your Preferences
+# Edit this file to change anything.
+# ─────────────────────────────────────────
+
+# ── Known Creators ──────────────────────
+# Add/remove channel IDs freely.
+# Get a channel ID: go to channel → view source → search "channelId"
+# Or use https://commentpicker.com/youtube-channel-id.php
+creators:
+  - id: UCmGSJVG3mCRXVOP4yZrU1Dw  # Johnny Harris
+  - id: UCIjivfwXSRdCO_QzQFUnkBg  # Fall of Civilizations
+  - id: UCMmaBzfCCwZ2KqaBJjkj0fw  # Kings and Generals
+  - id: UCwnKziETDbHJtx78nIkfYug  # CaspianReport
+
+# ── Topic Discovery Keywords ─────────────
+# These drive new-creator discovery via YouTube search.
+# Be specific — vague terms waste quota.
+topics:
+  - "science discovery documentary"
+  - "geopolitical history explained"
+  - "historical storytelling video essay"
+  - "Middle East history documentary"
+  - "Palestinian history explained"
+  - "ancient civilization documentary"
+
+# ── Quality Filters ──────────────────────
+filters:
+  min_duration_minutes: 10      # minimum video length
+  max_duration_minutes: 60      # maximum video length
+  min_view_count: 0             # 0 = no minimum (good for rising creators)
+  exclude_keywords:             # skip videos with these in title
+    - "short"
+    - "#shorts"
+    - "clip"
+    - "reaction"
+    - "live stream"
+
+# ── Digest Settings ──────────────────────
+digest:
+  max_videos_per_email: 10      # change this whenever you want
+  send_hour_utc: 13             # 13 = 6am PST / 9am EST
+
+# ── Scoring Weights (0–1) ────────────────
+# Higher = that signal matters more to relevance score
+scoring:
+  title_weight: 0.4
+  description_weight: 0.3
+  transcript_weight: 0.3
+  transcript_min_score: 6      # only fetch transcript if score >= this
+
+# ── First-Run Palestine Recommendation ───
+# Set to false after first email is sent (handled automatically).
+first_run_palestine_card: true
