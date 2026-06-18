@@ -26,7 +26,7 @@ topics:
 
 # ── Quality Filters ──────────────────────
 filters:
-  min_duration_minutes: 10      # minimum video length
+  min_duration_minutes:       # minimum video length
   max_duration_minutes: 60      # maximum video length
   min_view_count: 0             # 0 = no minimum (good for rising creators)
   exclude_keywords:             # skip videos with these in title
@@ -38,7 +38,7 @@ filters:
 
 # ── Digest Settings ──────────────────────
 digest:
-  max_videos_per_email: 10      # change this whenever you want
+  max_videos_per_email: 5      # change this whenever you want
   send_hour_utc: 13             # 13 = 6am PST / 9am EST
 
 # ── Scoring Weights (0–1) ────────────────
