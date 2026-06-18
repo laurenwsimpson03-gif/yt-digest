@@ -118,7 +118,7 @@ def build_email(videos: list[dict], include_palestine_card: bool = False) -> str
 
     <!-- Header -->
     <div style="background:#111827;padding:24px 32px;">
-      <div style="font-size:20px;font-weight:700;color:#fff;">📺 Your Video Digest</div>
+      <div style="font-size:20px;font-weight:700;color:#fff;">🎬 Video Essay Recs</div>
       <div style="font-size:13px;color:#9ca3af;margin-top:4px;">{today}</div>
     </div>
 
@@ -142,7 +142,7 @@ def send_email(html: str, subject: str = None):
     if not TO_EMAIL:
         raise ValueError("TO_EMAIL env var not set")
     if not subject:
-        subject = f"📺 Your Video Digest — {datetime.now().strftime('%b %d')}"
+        subject = f"🎬 Video Essay Recs — {datetime.now().strftime('%b %d')}"
 
     sg = sendgrid.SendGridAPIClient(api_key=os.environ["SENDGRID_API_KEY"])
     message = Mail(
