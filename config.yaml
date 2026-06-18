@@ -33,7 +33,7 @@ filters:
 
 # ── Digest Settings ──────────────────────
 digest:
-  max_videos_per_email: 10
+  max_videos_per_email: 5
   send_hour_utc: 14
 
 # ── Scoring Weights (0–1) ────────────────
