@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────
+# YouTube Digest - Your Preferences
+# Edit this file to change anything.
+# ─────────────────────────────────────────
+
+# ── Known Creators ──────────────────────
+creators:
+  - id: UCmGSJVG3mCRXVOP4yZrU1Dw  # Johnny Harris
+  - id: UCDGmojLIoWpXok596ygnFoQ  # Fall of Civilizations (corrected)
+  - id: UCMmaBzfCCwZ2KqaBJjkj0fw  # Kings and Generals
+  - id: UCwnKziETDbHJtx78nIkfYug  # CaspianReport
+
+# ── Topic Discovery Keywords ─────────────
+topics:
+  - "science discovery documentary"
+  - "geopolitical history explained"
+  - "historical storytelling video essay"
+  - "Middle East history documentary"
+  - "Palestinian history explained"
+  - "ancient civilization documentary"
+
+# ── Quality Filters ──────────────────────
+filters:
+  min_duration_minutes: 10
+  max_duration_minutes: 60
+  min_view_count: 0
+  exclude_keywords:
+    - "short"
+    - "#shorts"
+    - "clip"
+    - "reaction"
+    - "live stream"
+
+# ── Digest Settings ──────────────────────
+digest:
+  max_videos_per_email: 10
+  send_hour_utc: 14
+
+# ── Scoring Weights (0–1) ────────────────
+scoring:
+  title_weight: 0.4
+  description_weight: 0.3
+  transcript_weight: 0.3
+  transcript_min_score: 6
+
+# ── First-Run Palestine Recommendation ───
+first_run_palestine_card: true
